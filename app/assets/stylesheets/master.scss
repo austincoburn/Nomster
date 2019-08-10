@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Farro&display=swap');
+
 @import "bootstrap";
 
 .booyah-box {
@@ -25,4 +27,9 @@ body {
 .navbar {
   background: image_url('prism.png');
   box-shadow: 10px 10px 5px grey;
+}
+
+.navbar-inverse a.navbar-brand {
+  color: #35F7E4;
+  font-family: 'Farro', sans-serif;
 }
