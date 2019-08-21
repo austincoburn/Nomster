@@ -73,4 +73,7 @@ end
 
 gem "font-awesome-rails"
 gem "devise"
+gem 'will_paginate', '~> 3.1.0'
+gem "geocoder"
+gem "figaro"
 
