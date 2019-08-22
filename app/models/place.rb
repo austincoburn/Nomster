@@ -4,4 +4,6 @@ class Place < ApplicationRecord
 	after_validation :geocode
 	validates :name, :address, :description, presence: true
 	validates :name, length: { minimum: 3 }
+
+	has_many :comments
 end
