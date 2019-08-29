@@ -89,12 +89,25 @@
 		</blockquote>
 	</div>
 <% end %>
+<% @place.photos.each do |photo| %>
+		<div class="col-12 col-sm-6">
+			<blockquote>
+				<% if photo.present? %>
+					<b><%= photo.caption %></b> -
+				<% end %>
+					<%= photo.place_id %>
+			</blockquote>
+		</div>
+	</div>
+</div>
+<% end %>
 </div>
 
-<% simple_form_for @photo, url: place_photos_path(@place) do |f| %>
-	<% f.input :caption %>
-	<% f.input :place_id %>
-	<% f.submit "Add a Photo", class: 'btn btn-primary' %>
+<%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+	<%= f.input :caption %>
+	<%= f.input :picture %>
+	<%= image_tag '@photo', class: 'img-fluid' %>
+	<%= f.submit "Add a Photo", class: 'btn btn-primary' %>
 <% end %>
 
 
