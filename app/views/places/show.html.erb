@@ -96,6 +96,7 @@
 					<b><%= photo.caption %></b> -
 				<% end %>
 					<%= photo.place_id %>
+					<%= image_tag photo.picture.url.to_s , class: "img-fluid"  %>
 			</blockquote>
 		</div>
 	</div>
@@ -103,12 +104,18 @@
 <% end %>
 </div>
 
+
 <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+<div class="modal-body">
 	<%= f.input :caption %>
 	<%= f.input :picture %>
-	<%= image_tag '@photo', class: 'img-fluid' %>
+</div>
+<div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 	<%= f.submit "Add a Photo", class: 'btn btn-primary' %>
-<% end %>
+		</div>
+      <% end %>
+    
 
 
 
